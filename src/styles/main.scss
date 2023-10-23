@@ -5,6 +5,7 @@
 @use "available-devices";
 @use "faq";
 @use "footer";
+@use "header";
 
 @font-face {
     font-family: Avenir;
@@ -23,6 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 body {
@@ -71,16 +73,43 @@ body {
 }
 
 .button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 60px;
     font-size: 18px;
     color: variaveis.$cor_textose;
-    background-color: #6421ff;
+    background-color: variaveis.$cor_botaop;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 2vw;
-    margin-bottom: 8px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$cor_botaop;
+
+    &:hover {
+        background-color: lighten(variaveis.$cor_botaop, 3%);
+    }
+
+    &--secondary {
+        background-color: variaveis.$cor_botaosec;
+        border-color: variaveis.$cor_botaosec;
+
+        &:hover {
+            background-color: lighten(variaveis.$cor_botaosec, 3%);
+        }
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$cor_dark, 0.8);
+        border-color: variaveis.$cor_textose;
+
+        &:hover {
+            background-color: variaveis.$cor_textose;
+            color: variaveis.$cor_fundo;
+        }
+    }
 }
 
 .image-text-section {
